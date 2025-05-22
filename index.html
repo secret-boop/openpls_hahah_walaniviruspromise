@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secret Message for Vian</title>
+  <!-- Google Fonts Bodoni Moda -->
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Bodoni Moda', serif;
+      max-width: 700px;
+      margin: 40px auto;
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 10px;
+      color: #222;
+    }
+    .hidden { display: none; }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-family: 'Bodoni Moda', serif;
+      border: 1px solid #888;
+      border-radius: 5px;
+      background: #fff;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #ececec;
+    }
+    .message { white-space: pre-line; margin-top: 30px; }
+  </style>
+</head>
+<body>
+  <div id="q1">
+    <p>Hi Vian! I kinda have something to tell you hahaha. But first, can I ask you to keep this a secret muna? (yes/no):</p>
+    <button onclick="q1('yes')">yes</button>
+    <button onclick="q1('no')">no</button>
+  </div>
+  <div id="q2" class="hidden">
+    <p>kulbaa uy hahah pero please read it with an open mind hihi. (okay/no):</p>
+    <button onclick="q2('okay')">okay</button>
+    <button onclick="q2('no')">no</button>
+  </div>
+  <div id="final" class="hidden">
+    <div class="message">
+      <strong>Kulbaa uy. Pero here it is:</strong><br><br>
+      Hi Vianie! Hope you are doing well. HAHAHA this is so random pero I just thought na I am going to regret not doing this (i English-cebuano ra nako para di kaayo awkward hahaha ambot).<br>
+      I have been racking my brain these past few weeks if how and when should I tell you this, or should I even tell you this, pero here it goes.<br>
+      I know we’ve been friends for a while now, and it has been really fun. Honestly, I am not sure if this is the right thing and the right time to do. But I am gonna take my chances. Murag obvious naman sad gud kaayo hahah (kupal jud si grace minsan and mga sungog nila ate nimo hahaha). But yes, I do like you. You’ve always been this kind, smart, pure-hearted, beautiful, and most importantly, a spiritually minded person. You’ve always put Jehovah first, which I admire the most about you.<br>
+      So, mao ra to sya hahaha. I’m hoping to get to know you better, because I really think that you are a very interesting person.<br>
+      If somehow you feel differently than what I feel, I am hoping na it won’t get in the way of our friendship, unta di ra ta ma awkward hahaha. It is one of the things na I am worried about (sayang mga laag and trips hahah).<br>
+      <br>
+      p.s. May gi kwento si grace the night na nag dinner mo sa inyoha HAHAH idk if tinuod to. Unta di ka malain or masuko kay Grace, haha gipilit prolly nako sya kay interested sad guro sok yogsss.
+    </div>
+  </div>
+  <div id="end" class="hidden">
+    <p id="endMsg"></p>
+  </div>
+  <script>
+    function q1(ans) {
+      if(ans === 'no') {
+        document.getElementById('q1').classList.add('hidden');
+        document.getElementById('end').classList.remove('hidden');
+        document.getElementById('endMsg').innerText = "Secret lang sa unta hahaha.";
+      } else if(ans === 'yes') {
+        document.getElementById('q1').classList.add('hidden');
+        document.getElementById('q2').classList.remove('hidden');
+      }
+    }
+    function q2(ans) {
+      if(ans === 'no') {
+        document.getElementById('q2').classList.add('hidden');
+        document.getElementById('end').classList.remove('hidden');
+        document.getElementById('endMsg').innerText = "ay di siya mabasa if no AHAHAHA. Try ulit?";
+      } else if(ans === 'okay') {
+        document.getElementById('q2').classList.add('hidden');
+        document.getElementById('final').classList.remove('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
